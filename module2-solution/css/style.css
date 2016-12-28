@@ -6,8 +6,7 @@
   padding: 0;
 
 }
-div{
-  background-color: #808080;
+div{  
 /*  margin-bottom: 15px;
   margin-top: 15px;
   position: relative;
@@ -79,6 +78,7 @@ p {
     margin-right: 5px;    
     border: 2px solid black;
     position: relative;
+    background-color: #808080;
   }
 
 
@@ -92,6 +92,7 @@ p {
     border: 2px solid black;
     position: relative;
     margin: 15px;
+    background-color: #808080;
 
   }
 
@@ -102,7 +103,7 @@ p {
       width: 40%;
 }
 .col-md-3 {
-      width: 80%;
+      width: 85%;
 }
 
 }
@@ -114,6 +115,7 @@ p {
   .col-sm-12 {
     margin: 15px;
     border: 2px solid black;
+    background-color: #808080;
   }
 
 }
