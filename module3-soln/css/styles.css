@@ -1,0 +1,27 @@
+
+
+div li {
+	border: 1px solid black;
+}
+
+#title {
+	text-align: center;
+	background: gray;
+	margin: 0 20px 0 20px;
+	padding: 10px;
+}
+
+#myparagraph {
+	margin: 0 20px 0 20px;
+	padding: 20px;
+	background: gray;
+}
+
+#navList li {
+
+	text-align:  center;
+	background-color: gray;
+}
+
+
+
