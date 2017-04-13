@@ -15,14 +15,14 @@ function LunchController($scope) {
 		if(lunchMenu =="" || lunchMenu == undefined)
 			items=0;
 		else 
-			items = lunchMenu.split(",");
+			items = lunchMenu.split(",").length;
 		
 		console.log(items);
-		if(items.length==-1)
+		if(items==-1)
 			$scope.message ="";
-		else if(items.legth==0)
+		else if(items==0)
 			$scope.message = "Enter data first";
-		else if (items.length>3)
+		else if (items>3)
 			$scope.message = "too much food";
 		else
 			$scope.message = "Good Lunch";
