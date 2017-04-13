@@ -15,7 +15,9 @@ function LunchController($scope) {
 		var lunchMenu = $scope.lunchMenu;
 		var items = lunchMenu.split(",");
 		console.log(items);
-		if (items.length>3)
+		if(items.legth==0)
+			$scope.message = "Enter data first";
+		else if (items.length>3)
 			$scope.message = "too much food";
 		else
 			$scope.message = "Good Lunch";
