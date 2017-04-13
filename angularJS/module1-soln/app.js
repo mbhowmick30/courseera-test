@@ -8,9 +8,7 @@ angular.module('lunchApp',[])
 
 LunchController.$inject = ['$scope'];		
 function LunchController($scope) {
-
-	$scope.lunchMenu = "";
-	$scope.message ="";
+	
 	$scope.listLunchMenu= function (){
 		var lunchMenu = $scope.lunchMenu;
 		var items = -1;
