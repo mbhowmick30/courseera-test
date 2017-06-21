@@ -18,7 +18,7 @@
           <button ng-click="list1.bought($index);">Bought</button>
         </li>
       </ol>
-      <div ng-if="list1.errorMessage" >{{list1.errorMessage}}</div>
+      <div ng-if="list1.items.length==0" >Everything is bought!</div>
     </div>
 
 
@@ -29,7 +29,7 @@
           {{ item.quantity }} of {{ item.name }}
         </li>
       </ol>
-      <div ng-if="list2.errorMessage" > {{list2.errorMessage}}</div>
+      <div ng-if="list2.items.length==0" > Nothing bought yet.</div>
     </div>
 
 
