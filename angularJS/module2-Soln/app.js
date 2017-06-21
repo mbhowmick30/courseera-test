@@ -16,6 +16,14 @@ function ToBuyController(ShoppingListCheckOffService) {
   }
 
   list1.items = ShoppingListCheckOffService.getToBuyItems();
+  console.log("items: "+list1.items);
+  if(list1.items.length ==0){
+    list1.errorMessage =  "Everything is bought!"
+  }
+  else {
+    list1.errorMessage =  ""
+  }
+
 
 }
 
@@ -26,6 +34,13 @@ function AlreadyBoughtController(ShoppingListCheckOffService) {
   var list2 = this;
 
   list2.items = ShoppingListCheckOffService.getItemsBought();
+
+  if(list2.items.length == 0)
+    list2.errorMessage = "Nothing bought yet.";
+    else {
+      list2.errorMessage = "";
+    }
+
 }
 
 
