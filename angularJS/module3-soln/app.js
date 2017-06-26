@@ -38,9 +38,10 @@ function NarrowItDownController(MenuSearchService) {
   var list = this;
 
   list.getMatchedMenuItems = function(searchTerm){
-    list.found = MenuSearchService.bought(searchTerm);
+    list.found = MenuSearchService.getMatchedMenuItems(searchTerm);
+    console.log("Found: "+list.found);
   }
-  console.log("Found: "+list.found);
+
 
   list.removeItem = function (itemIndex) {
     // this.lastRemoved = "Last item removed was " + this.items[itemIndex].name;
