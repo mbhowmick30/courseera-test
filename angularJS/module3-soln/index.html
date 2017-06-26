@@ -9,22 +9,21 @@
     <script src="app.js"></script>
   </head>
 <body>
-   <div class="container">
+   <div class="container" ng-controller="NarrowItDownController as list">
     <h1>Narrow Down Your Chinese Menu Choice</h1>
 
     <div class="form-group">
       <input type="text" placeholder="search term" class="form-control">
     </div>
     <div class="form-group narrow-button">
-      <button class="btn btn-primary">Narrow It Down For Me!</button>
+      <button class="btn btn-primary" ng-click="list.getMatchedMenuItems()">Narrow It Down For Me!</button>
     </div>
 
     <found-items
-      items="list.items"
+      items="list.found"
       on-remove="list.removeItem(index)">
     </found-items>
   </div>
 
-  
 </body>
 </html>
