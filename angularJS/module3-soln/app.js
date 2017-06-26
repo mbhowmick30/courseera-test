@@ -52,7 +52,7 @@ function NarrowItDownController(MenuSearchService) {
 
 // If not specified, maxItems assumed unlimited
 MenuSearchService.$inject = ['$http', 'ApiBasePath'];
-function MenuSearchService() {
+function MenuSearchService($http, ApiBasePath) {
   var service = this;
 
   service.getMatchedMenuItems =  function (searchTerm) {
