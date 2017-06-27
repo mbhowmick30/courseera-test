@@ -39,7 +39,7 @@ function FoundItemsDirectiveController() {
 NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService) {
   var list = this;
-
+  list.searchTerm = "";
   list.getMatchedMenuItems = function(searchTerm){
 
     if(!list.searchTerm.replace(/\s/g, '').length){
