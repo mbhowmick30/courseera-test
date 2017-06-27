@@ -40,6 +40,7 @@ NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService) {
   var list = this;
   list.searchTerm = "";
+
   list.getMatchedMenuItems = function(searchTerm){
 
     if(!list.searchTerm.replace(/\s/g, '').length){
@@ -69,40 +70,34 @@ function NarrowItDownController(MenuSearchService) {
 
 // If not specified, maxItems assumed unlimited
 MenuSearchService.$inject = ['$http', 'ApiBasePath'];
-function MenuSearchService() {
+
+function MenuSearchService($http, ApiBasePath){
   var service = this;
 
-  service.getMatchedMenuItems =  function (searchTerm) {
-
-    var response = $http({
+  service.getMatchedMenuItems = function(searchTerm){
+    return $http({
       method: "GET",
-      url: (ApiBasePath + "/menu_items.json"),
-      params: {
-        description: searchTerm
-      }
-    });
-
-    return response.then(function(result){
-
-      var data = result.data.menu_items;
-      // process result and only keep items that match
-      var foundItems=[];
+      url: ApiBasePath+"/menu_items.json"
+    }).then(function(response){
+      var data = response.data.menu_items;
+      var result = [];
       for(var i=0; i<data.length; i++){
-           if(data[i].description.toLowerCase().indexOf(searchTerm) !== -1){
-             foundItems.push(data[i]);
-           }
-         }
-      // return processed items
-      return foundItems;
+        if(data[i].description.toLowerCase().indexOf(searchTerm) !== -1){
+          result.push(data[i]);
+        }
+      }
+      // console.log(response.data);
+      return result;
     }).catch(function(error){
       console.log(error);
-    });
-
-  };
+    })
+  }
 
   service.removeItem = function (itemIndex) {
     items.splice(itemIndex, 1);
   };
+
 }
+
 
 })();
