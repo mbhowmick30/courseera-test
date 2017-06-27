@@ -63,7 +63,7 @@ function NarrowItDownController(MenuSearchService) {
 
   list.removeItem = function (itemIndex) {
     // this.lastRemoved = "Last item removed was " + this.items[itemIndex].name;
-    list.splice(itemIndex,1);
+    list.found.splice(itemIndex,1);
   };
 }
 
