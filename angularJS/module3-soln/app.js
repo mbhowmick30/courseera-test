@@ -80,12 +80,14 @@ function MenuSearchService($http, ApiBasePath){
       url: ApiBasePath+"/menu_items.json"
     }).then(function(response){
       var data = response.data.menu_items;
+      console.log("data= "+data);
       var result = [];
       for(var i=0; i<data.length; i++){
         if(data[i].description.toLowerCase().indexOf(searchTerm) !== -1){
           result.push(data[i]);
         }
       }
+      console.log("result= "+result);
       // console.log(response.data);
       return result;
     }).catch(function(error){
