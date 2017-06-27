@@ -16,7 +16,7 @@ function FoundItemsDirective() {
       onRemove: '&'
     },
     controller: FoundItemsDirectiveController,
-    controllerAs: 'list',
+    controllerAs: 'list1',
     bindToController: true
   };
 
@@ -25,8 +25,11 @@ function FoundItemsDirective() {
 
 
 function FoundItemsDirectiveController() {
-  var list = this;
-  return false;
+  var list1 = this;
+  //function that checks whether we should print msg "Nothing found"
+  list1.checkForFoundItems = function(){
+   return list1.items !== "Nothing found";
+ }
 
 }
 
@@ -38,8 +41,22 @@ function NarrowItDownController(MenuSearchService) {
   var list = this;
 
   list.getMatchedMenuItems = function(searchTerm){
-    list.found = MenuSearchService.getMatchedMenuItems(searchTerm);
-    console.log("Found: "+list.found);
+
+    if(!list.searchTerm.replace(/\s/g, '').length){
+     list.found = "Nothing found";
+   }
+   else{
+     MenuSearchService.getMatchedMenuItems(searchTerm).then(function(data){
+
+       if(data.length !== 0){
+         list.found = data;
+       }else {
+         list.found = "Nothing found";
+       }
+     }).catch(function(error){
+          console.log(error);
+        });
+    }
   }
 
 
@@ -52,7 +69,7 @@ function NarrowItDownController(MenuSearchService) {
 
 // If not specified, maxItems assumed unlimited
 MenuSearchService.$inject = ['$http', 'ApiBasePath'];
-function MenuSearchService($http, ApiBasePath) {
+function MenuSearchService() {
   var service = this;
 
   service.getMatchedMenuItems =  function (searchTerm) {
@@ -67,13 +84,18 @@ function MenuSearchService($http, ApiBasePath) {
 
     return response.then(function(result){
 
+      var data = result.data.menu_items;
       // process result and only keep items that match
-      var foundItems = result;
-
+      var foundItems[];
+      for(var i=0; i<data.length; i++){
+           if(data[i].description.toLowerCase().indexOf(searchTerm) !== -1){
+             foundItems.push(data[i]);
+           }
+         }
       // return processed items
       return foundItems;
-
-
+    }).catch(function(error){
+      console.log(error);
     });
 
   };
