@@ -41,13 +41,13 @@ function NarrowItDownController(MenuSearchService) {
   var list = this;
   list.searchTerm = "";
 
-  list.getMatchedMenuItems = function(searchTerm){
+  list.getMatchedMenuItems = function(){
 
     if(!list.searchTerm.replace(/\s/g, '').length){
      list.found = "Nothing found";
    }
    else{
-     MenuSearchService.getMatchedMenuItems(searchTerm).then(function(data){
+     MenuSearchService.getMatchedMenuItems(list.searchTerm).then(function(data){
 
        if(data.length !== 0){
          list.found = data;
@@ -83,7 +83,7 @@ function MenuSearchService($http, ApiBasePath){
       console.log("data= "+data);
       var result = [];
       for(var i=0; i<data.length; i++){
-        if(data[i].description.toLowerCase().indexOf(searchTerm) == -1){
+        if(data[i].description.toLowerCase().indexOf(searchTerm) !== -1){
           console.log("data[i] = "+data[i]);
           result.push(data[i]);
         }
