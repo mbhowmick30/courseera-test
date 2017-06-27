@@ -84,6 +84,7 @@ function MenuSearchService($http, ApiBasePath){
       var result = [];
       for(var i=0; i<data.length; i++){
         if(data[i].description.toLowerCase().indexOf(searchTerm) !== -1){
+          console.log("data[i] = "+data[i]);
           result.push(data[i]);
         }
       }
