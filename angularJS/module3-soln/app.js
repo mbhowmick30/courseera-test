@@ -86,7 +86,7 @@ function MenuSearchService() {
 
       var data = result.data.menu_items;
       // process result and only keep items that match
-      var foundItems[];
+      var foundItems=[];
       for(var i=0; i<data.length; i++){
            if(data[i].description.toLowerCase().indexOf(searchTerm) !== -1){
              foundItems.push(data[i]);
