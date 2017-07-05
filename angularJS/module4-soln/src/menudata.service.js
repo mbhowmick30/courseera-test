@@ -17,7 +17,7 @@
 
         return response.then(function(result){
           console.log("categories = "+result.data);
-          var data = result.data.categories;
+          var data = result.data;
           return data;
 
         }).catch(function(error){
