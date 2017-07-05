@@ -6,7 +6,7 @@
       templateUrl: 'src/itemtemplate.html',
       bindings: {
         items: '<'
-      }
+}
     });
 
 })();

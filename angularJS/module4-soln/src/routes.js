@@ -10,7 +10,7 @@
       $urlRouterProvider.otherwise('/');
 
       $stateProvider
-      
+
       .state('home', {
         url: '/',
         templateUrl: 'src/templates/home.html'
@@ -20,7 +20,7 @@
       .state('categories', {
       url: '/categories',
       templateUrl: 'src/categories.html',
-      controller: 'CategoriesController as ctrl',
+      controller: 'CategoriesController as catCtrl',
       resolve: {
           categories: ['MenuDataService', function (MenuDataService){
               return MenuDataService.getAllCategories();
