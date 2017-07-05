@@ -10,19 +10,19 @@
       var service = this;
 
       service.getAllCategories = function(){
-        var response = $http({
+        return $http({
           method: "GET",
           url: ("https://davids-restaurant.herokuapp.com/categories.json"),
-        });
+        })
 
-        return response.then(function(result){
+        .then(function(result){
           console.log("categories = "+result.data);
           var data = result.data;
           console.log("categories:" + JSON.stringify(data));
           return data;
 
-        }).catch(function(error){
-          console.log(error);
+        },function error (response){
+          console.log(reponse);
         });
 
       };
