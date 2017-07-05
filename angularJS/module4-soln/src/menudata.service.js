@@ -8,6 +8,8 @@
     function MenuDataService(){
 
       var service = this;
+      var categories = [];
+      var items = [];
 
       service.getAllCategories = function(){
         return $http({
@@ -17,9 +19,9 @@
 
         .then(function(result){
           console.log("categories = "+result.data);
-          var data = result.data;
-          console.log("categories:" + JSON.stringify(data));
-          return data;
+          categories = result.data;
+          console.log("categories:" + JSON.stringify(categories));
+          return categories;
 
         },function error (response){
           console.log(reponse);
@@ -36,9 +38,9 @@
 
         return response.then(function(result){
           console.log("Gargi here "+result.data);
-          var data = result.data;
-          console.log("items:" + JSON.stringify(data));
-          return data;
+          items = result.data;
+          console.log("items:" + JSON.stringify(items));
+          return items;
 
         }).catch(function(error){
           console.log(error);
