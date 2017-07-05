@@ -18,6 +18,7 @@
         return response.then(function(result){
           console.log("categories = "+result.data);
           var data = result.data;
+          console.log("categories:" + JSON.stringify(data));
           return data;
 
         }).catch(function(error){
@@ -36,6 +37,7 @@
         return response.then(function(result){
           console.log("Gargi here "+result.data);
           var data = result.data;
+          console.log("items:" + JSON.stringify(data));
           return data;
 
         }).catch(function(error){
