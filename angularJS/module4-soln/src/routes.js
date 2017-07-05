@@ -9,6 +9,8 @@
 
       $urlRouterProvider.otherwise('/');
 
+      $stateProvider
+      
       .state('home', {
         url: '/',
         templateUrl: 'src/templates/home.html'
