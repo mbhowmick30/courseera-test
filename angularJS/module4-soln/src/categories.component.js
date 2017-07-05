@@ -5,7 +5,7 @@
     .component('categories', {
 
         templateUrl: "src/categories.html",
-        controller: CategoriesComponentController,
+        controller: CategoriesController,
         bindings: {
           categories: '<'
         }
