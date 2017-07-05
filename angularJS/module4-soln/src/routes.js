@@ -30,7 +30,7 @@
 
     .state('items', {
     url: '/items/{shortName}',
-    templateUrl: 'src/templates/items.html',
+    templateUrl: 'src/items.html',
     controller: 'ItemsController as itemsCtrl',
     resolve: {
             items: ['$stateParams', 'MenuDataService',
