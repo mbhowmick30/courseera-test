@@ -4,8 +4,7 @@
     angular.module('Data')
     .component('categories', {
 
-        templateUrl: "src/categories.html",
-        controller: CategoriesController,
+        templateUrl: "src/categoriestemplate.html",
         bindings: {
           categories: '<'
         }
