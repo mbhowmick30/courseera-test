@@ -13,7 +13,7 @@
 
       .state('home', {
         url: '/',
-        templateUrl: 'src/templates/home.html'
+        templateUrl: 'src/home.html'
       })
 
 
