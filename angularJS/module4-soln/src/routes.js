@@ -17,7 +17,7 @@
       })
 
 
-      .state('Mycategories', {
+      .state('categories', {
       url: '/categories',
       templateUrl: 'src/categories.html',
       controller: 'CategoriesController as catCtrl',
