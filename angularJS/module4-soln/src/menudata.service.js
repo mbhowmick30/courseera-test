@@ -4,8 +4,8 @@
 
     angular.module('Data')
     .service('MenuDataService', MenuDataService);
-
-    function MenuDataService(){
+    MenuDataService.$inject = ['$http' , '$q'];
+    function MenuDataService($http, $q){
 
       var service = this;
       var categories = [];
