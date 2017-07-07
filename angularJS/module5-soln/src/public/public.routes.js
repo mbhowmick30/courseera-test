@@ -41,8 +41,8 @@ function routeConfig ($stateProvider) {
         }]
       }
     });
-  
-  .state('public.info', {
+
+    .state('public.info', {
     url: '/info',
     templateUrl: 'src/public/info/info.html',
     controller: 'InfoController',   
