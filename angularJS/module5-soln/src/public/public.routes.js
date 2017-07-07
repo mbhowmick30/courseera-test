@@ -40,7 +40,7 @@ function routeConfig ($stateProvider) {
           return MenuService.getMenuItems($stateParams.category);
         }]
       }
-    });
+    })
 
     .state('public.info', {
     url: '/info',
